@@ -309,9 +309,7 @@ public class TicTacToe {
                 countEmpty++;                                               //считаем
 
                 if(line[i + 1] == DOT_X && countEmpty == 1){     //А в следующией ячейке крестик (для случаев типа * X X * X)
-                    countX++;
-                    alarm--;
-                    //это опасно
+                    countX++;                                           //это опасно
                 }
 
                 if (countX >= alarm){                                       //Если опасное кол-во
