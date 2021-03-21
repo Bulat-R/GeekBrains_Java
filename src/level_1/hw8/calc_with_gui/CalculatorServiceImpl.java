@@ -1,4 +1,4 @@
-package level_1.hw8.calk_with_gui;
+package level_1.hw8.calc_with_gui;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -7,7 +7,7 @@ public class CalculatorServiceImpl implements CalculatorService {
     private String firstOperand;
     private String secondOperand;
     private String operation;
-    private StringBuilder sb = new StringBuilder("");
+    private StringBuilder sb = new StringBuilder();
 
     public String analyzeAndReturnOutput(String symb) {
 
@@ -38,7 +38,7 @@ public class CalculatorServiceImpl implements CalculatorService {
                 }
                 break;
             case "C" :
-                sb = new StringBuilder("");
+                sb = new StringBuilder();
                 firstOperand = null;
                 secondOperand = null;
                 operation = null;
@@ -66,7 +66,7 @@ public class CalculatorServiceImpl implements CalculatorService {
                 break;
             case "<" :
                 if (sb.toString().equals("0.") || sb.toString().equals("-0.") || (sb.toString().length() == 2 && sb.charAt(0) == '-')) {
-                    sb = new StringBuilder("");
+                    sb = new StringBuilder();
                     writeOperand(sb.toString());
                     return "0";
                 }
@@ -86,7 +86,7 @@ public class CalculatorServiceImpl implements CalculatorService {
             case "/" :
                 return calculate(firstOperand, secondOperand, symb);
             case "=" :
-                sb = new StringBuilder("");
+                sb = new StringBuilder();
                 if (this.operation != null) {
                     if (firstOperand != null) {
                         if (secondOperand != null) {
@@ -110,7 +110,7 @@ public class CalculatorServiceImpl implements CalculatorService {
     }
 
     private String calculate(String firstOperand, String secondOperand, String operation) {
-        sb = new StringBuilder("");
+        sb = new StringBuilder();
         if (this.operation != null) {
             if (firstOperand != null) {
                 if (secondOperand != null) {

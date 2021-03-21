@@ -1,4 +1,4 @@
-package level_1.hw8.calk_with_gui;
+package level_1.hw8.calc_with_gui;
 
 import javax.swing.*;
 import java.awt.*;
@@ -53,8 +53,8 @@ public class CalculatorGUI extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(4, 5, 2, 2));
 
-        for (int i = 0; i < buttSymb.length; i++) {
-            JButton button = new JButton(buttSymb[i]);
+        for (String s : buttSymb) {
+            JButton button = new JButton(s);
             button.setPreferredSize(new Dimension(70, 70));
             button.setFont(new Font(panel.getFont().getName(), panel.getFont().getStyle(), 24));
             button.setFocusable(false);
@@ -62,6 +62,7 @@ public class CalculatorGUI extends JFrame {
                 @Override
                 public void mouseClicked(MouseEvent e) {
                 }
+
                 @Override
                 public void mousePressed(MouseEvent e) {
                     if (button.getText().equals("C")) {
@@ -69,6 +70,7 @@ public class CalculatorGUI extends JFrame {
                     }
                     refreshCalcScreen(calculatorService.analyzeAndReturnOutput(button.getText()));
                 }
+
                 @Override
                 public void mouseReleased(MouseEvent e) {
 

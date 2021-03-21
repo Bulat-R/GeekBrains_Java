@@ -1,6 +1,4 @@
-package level_1.hw8.calk_with_gui;
-
-import javax.swing.*;
+package level_1.hw8.calc_with_gui;
 
 public class Main {
     public static void main(String[] args) {
