@@ -9,7 +9,7 @@ public class CalculatorGUI extends JFrame {
 
     private final JLabel calcScreen;
     private final JPanel buttonsPanel;
-    private final CalculatorService calculatorService = new CalculatorServiceImpl();
+    private final CalculatorService calculatorService = CalculatorFactory.getCalculatorService();
 
     public CalculatorGUI() {
 
