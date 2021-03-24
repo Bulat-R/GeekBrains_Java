@@ -65,10 +65,12 @@ public class CalculatorGUI extends JFrame {
 
                 @Override
                 public void mousePressed(MouseEvent e) {
-                    if (button.getText().equals("C")) {
-                        unblockButtons();
+                    if (button.isEnabled()) {
+                        if (button.getText().equals("C")) {
+                            unblockButtons();
+                        }
+                        refreshCalcScreen(calculatorService.analyzeAndReturnOutput(button.getText()));
                     }
-                    refreshCalcScreen(calculatorService.analyzeAndReturnOutput(button.getText()));
                 }
 
                 @Override
@@ -125,7 +127,6 @@ public class CalculatorGUI extends JFrame {
         for (Component comp : buttonsPanel.getComponents()) {
             if (!((JButton)comp).getText().equals("C")) {
                 comp.setEnabled(false);
-                comp.setVisible(false);
             }
         }
     }
@@ -133,7 +134,6 @@ public class CalculatorGUI extends JFrame {
     public void unblockButtons() {
         for (Component comp : buttonsPanel.getComponents()) {
             comp.setEnabled(true);
-            comp.setVisible(true);
         }
     }
 }
