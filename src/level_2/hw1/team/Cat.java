@@ -1,18 +1,18 @@
-package level_2.team;
+package level_2.hw1.team;
 
 import java.util.Random;
 
-public class Robot implements Teammate {
+public class Cat implements Teammate {
     private final int jumpHeight;
     private final int runDistance;
-    private final String name;
+    private String name;
     private static int count = 0;
 
-    public Robot() {
-        name = "робот №" + ++count;
+    public Cat() {
+        name = "кот №" + ++count;
         Random random = new Random();
-        jumpHeight = random.nextInt(10) + 1;
-        runDistance = random.nextInt(1000) + 100;
+        jumpHeight = random.nextInt(5) + 1;
+        runDistance = random.nextInt(500) + 100;
     }
 
     @Override

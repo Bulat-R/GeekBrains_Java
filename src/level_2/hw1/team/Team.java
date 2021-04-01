@@ -1,4 +1,4 @@
-package level_2.team;
+package level_2.hw1.team;
 
 import java.util.ArrayList;
 import java.util.StringJoiner;
@@ -27,7 +27,6 @@ public class Team {
         if (teammateNumbers > teamList.size()) {
             teamList.add(teammate);
         } else throw new Exception("Can't add teammate. Team already full");
-
     }
 
     public void showResult() {

@@ -1,4 +1,4 @@
-package level_2.obstacle_course;
+package level_2.hw1.obstacle_course;
 
 import java.util.Random;
 

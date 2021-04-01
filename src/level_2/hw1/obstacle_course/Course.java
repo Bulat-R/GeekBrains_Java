@@ -1,7 +1,7 @@
-package level_2.obstacle_course;
+package level_2.hw1.obstacle_course;
 
-import level_2.team.Team;
-import level_2.team.Teammate;
+import level_2.hw1.team.Team;
+import level_2.hw1.team.Teammate;
 import java.util.ArrayList;
 
 public class Course {
