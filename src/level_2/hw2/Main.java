@@ -46,17 +46,16 @@ public class Main {
                 throw new MyArraySizeException();
             }
         }
-        for (String[] strings : array) {
-            for (String string : strings) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
                 try {
-                    sum += Integer.parseInt(string);
+                    sum += Integer.parseInt(array[i][j]);
                 } catch (NumberFormatException e) {
-                    throw new MyArrayDataException();
+                    throw new MyArrayDataException("В ячейке " + i + " " + j + " неверные данные");
                 }
             }
         }
         return sum;
     }
-
 }
 
