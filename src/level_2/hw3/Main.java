@@ -1,6 +1,7 @@
 package level_2.hw3;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,6 +19,13 @@ public class Main {
         System.out.println(book.get("Иван"));
         System.out.println(book.get("Вася"));
         System.out.println(book.get("Bob"));
+
+        //-------Stream, Lambda?-------
+        List<String> list = List.of(randomArr);
+        System.out.println(list.stream().collect(Collectors.joining(" | ")));
+        Map<String, Integer> map = new HashMap<>();
+        list.forEach(key -> map.merge(key, 1, Integer::sum));
+        map.forEach((key, value) -> System.out.println(key + " = " + value));
     }
 
     private static String[] getRandomArray(String[] arr, int size) {
