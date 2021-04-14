@@ -21,7 +21,7 @@ public class Main {
         System.out.println(book.get("Bob"));
 
         //-------Stream, Lambda?-------
-        List<String> list = List.of(randomArr);
+        List<String> list = Arrays.asList(randomArr);
         System.out.println(list.stream().collect(Collectors.joining(" | ")));
         Map<String, Integer> map = new HashMap<>();
         list.forEach(key -> map.merge(key, 1, Integer::sum));
