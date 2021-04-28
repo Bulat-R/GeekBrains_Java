@@ -8,7 +8,8 @@ public class Main {
     public static void main(String[] args) {
 
         String[] strings = {"one", "two", "three", "four"};
-        System.out.println(Arrays.toString(changeValues(strings, 1, 3)));
+        changeValues(strings, 1, 3);
+        System.out.println(Arrays.toString(strings));
         List<String> stringList = arrayToList(strings);
         System.out.println(stringList);
         System.out.println(stringList.getClass().getSimpleName());
@@ -36,7 +37,7 @@ public class Main {
 
     }
 
-    public static <T> T[] changeValues(T[] arr, int firstInd, int secondIndex) {
+    public static <T> void changeValues(T[] arr, int firstInd, int secondIndex) {
         try {
             T tmp = arr[firstInd];
             arr[firstInd] = arr[secondIndex];
@@ -44,7 +45,6 @@ public class Main {
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Invalid indexes");
         }
-        return arr;
     }
 
     public static <T> ArrayList<T> arrayToList(T[] arr) {
