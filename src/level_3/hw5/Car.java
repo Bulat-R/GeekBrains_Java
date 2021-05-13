@@ -44,7 +44,6 @@ public class Car implements Runnable {
         for (int i = 0; i < race.getStages().size(); i++) {
             race.getStages().get(i).go(this);
         }
-        endCount.countDown();
         if (checkWin()) {
             System.out.println(this.name + " WIN");
         }
@@ -52,6 +51,7 @@ public class Car implements Runnable {
 
     private boolean checkWin(){
         synchronized (CARS_COUNT) {
+            endCount.countDown();
             return endCount.getCount() + 1 == CARS_COUNT.get();
         }
     }
