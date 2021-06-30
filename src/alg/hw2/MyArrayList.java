@@ -35,7 +35,7 @@ public class MyArrayList<E extends Comparable<E>> {
 
     private void resize() {
        E[] newList = (E[]) new Comparable[size + size/2 + 1];
-       System.arraycopy(list, 0, newList, 0 , list.length);
+       System.arraycopy(list, 0, newList, 0 , size);
        list = newList;
     }
 
