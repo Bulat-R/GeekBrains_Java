@@ -33,10 +33,10 @@ public class MyTreeMap<K extends Comparable<K>, V> {
     }
 
     public boolean isBalanced(){
-        return isNodeBalanced(root);
+        return isBalanced(root);
     }
 
-    private boolean isNodeBalanced(Node node) {
+    private boolean isBalanced(Node node) {
         if (node == null || node.left == null && node.right == null) {
             return true;
         } else if (node.left == null) {
@@ -45,8 +45,8 @@ public class MyTreeMap<K extends Comparable<K>, V> {
             return node.left.height < 2;
         } else {
             return Math.abs(node.left.height - node.right.height) < 2
-                    && isNodeBalanced(node.left)
-                    && isNodeBalanced(node.right);
+                    && isBalanced(node.left)
+                    && isBalanced(node.right);
         }
     }
 
