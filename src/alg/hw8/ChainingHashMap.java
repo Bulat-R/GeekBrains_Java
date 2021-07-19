@@ -88,7 +88,7 @@ public class ChainingHashMap<K, V> {
         checkKeyNotNull(key);
         int i = hash(key);
         for (int j = 0; j < st[i].size(); j++) {
-            if(key.equals(st[i].get(j))) {
+            if(key.equals(st[i].get(j).key)) {
                 return st[i].remove(j).value;
             }
         }
